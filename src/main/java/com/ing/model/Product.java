@@ -26,11 +26,8 @@ public class Product implements Serializable{
 	@Column(name="product_group_id")
 	private long productGroupId;
 	
-	@Column(name="product_name_en")
-	private String productNameEn;
-	
-	@Column(name="product_name_du")
-	private String productNameDu;
+	@Column(name="product_name")
+	private String productName;
 	
 	@Column(name="percentage")
 	private String percentage;
@@ -69,20 +66,12 @@ public class Product implements Serializable{
 		this.productGroupId = productGroupId;
 	}
 
-	public String getProductNameEn() {
-		return productNameEn;
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setProductNameEn(String productNameEn) {
-		this.productNameEn = productNameEn;
-	}
-
-	public String getProductNameDu() {
-		return productNameDu;
-	}
-
-	public void setProductNameDu(String productNameDu) {
-		this.productNameDu = productNameDu;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
 	public String getPercentage() {

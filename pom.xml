@@ -68,8 +68,14 @@
 			<version>2.9.2</version>
 		</dependency>
 	</dependencies>
-
+	<distributionManagement>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<url>http://13.233.109.120:8081/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 	<build>
+	
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
