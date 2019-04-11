@@ -32,18 +32,25 @@ public class Product implements Serializable{
 	@Column(name="product_name_du")
 	private String productNameDu;
 	
+	@Column(name="percentage")
 	private String percentage;
 
+	@Column(name="interest_rate")
 	private String interestRate;
 
+	@Column(name="special")
 	private String special;
 
+	@Column(name="deposit_and_withdrawal")
 	private String depositAndWithdrawal;
 
+	@Column(name="min_investment")
 	private String minInvestment;
 
+	@Column(name="max_investment")
 	private String maxInvestment;
 
+	@Column(name="duration")
 	private String duration;
 
 	public long getProductId() {
@@ -78,20 +85,61 @@ public class Product implements Serializable{
 		this.productNameDu = productNameDu;
 	}
 
-	public Product(long productId, long productGroupId, String productNameEn, String productNameDu) {
-		super();
-		this.productId = productId;
-		this.productGroupId = productGroupId;
-		this.productNameEn = productNameEn;
-		this.productNameDu = productNameDu;
+	public String getPercentage() {
+		return percentage;
 	}
 
-	@Override
-	public String toString() {
-		return "Product [productId=" + productId + ", productGroupId=" + productGroupId + ", productNameEn="
-				+ productNameEn + ", productNameDu=" + productNameDu + "]";
+	public void setPercentage(String percentage) {
+		this.percentage = percentage;
 	}
-	
-	
 
+	public String getInterestRate() {
+		return interestRate;
+	}
+
+	public void setInterestRate(String interestRate) {
+		this.interestRate = interestRate;
+	}
+
+	public String getSpecial() {
+		return special;
+	}
+
+	public void setSpecial(String special) {
+		this.special = special;
+	}
+
+	public String getDepositAndWithdrawal() {
+		return depositAndWithdrawal;
+	}
+
+	public void setDepositAndWithdrawal(String depositAndWithdrawal) {
+		this.depositAndWithdrawal = depositAndWithdrawal;
+	}
+
+	public String getMinInvestment() {
+		return minInvestment;
+	}
+
+	public void setMinInvestment(String minInvestment) {
+		this.minInvestment = minInvestment;
+	}
+
+	public String getMaxInvestment() {
+		return maxInvestment;
+	}
+
+	public void setMaxInvestment(String maxInvestment) {
+		this.maxInvestment = maxInvestment;
+	}
+
+	public String getDuration() {
+		return duration;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
+
+	
 }
