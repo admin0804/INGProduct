@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ing.dto.MetricDto;
 import com.ing.dto.ProductDto;
 import com.ing.dto.ProductGroupDto;
 import com.ing.model.ProductGroup;
+import com.ing.service.MetricService;
 import com.ing.service.ProductService;
 
 @RestController
@@ -23,6 +25,9 @@ public class ProductController {
 	
 	@Autowired
 	private ProductService productService;
+	
+	@Autowired
+	private MetricService metricService;
 	
 	@GetMapping("/overview")
 	public ResponseEntity<List<ProductGroup>> getAllProducts(){
@@ -36,14 +41,18 @@ public class ProductController {
 	}
 	
 	@GetMapping("/productGroups")
-	public ResponseEntity<List<ProductGroupDto>> getProductGroups() {
+	public ResponseEntity<List<ProductGroupDto>> getProductGroups(@RequestParam(value = "lang") int language) {
 		return new ResponseEntity<List<ProductGroupDto>>(productService.getProductGroup(), HttpStatus.OK);
 	}
 
 	@GetMapping("/products")
-	public ResponseEntity<List<ProductDto>> getProducts(@RequestParam(value = "id") int groupId) {
+	public ResponseEntity<List<ProductDto>> getProducts(@RequestParam(value = "id") int groupId,
+			@RequestParam(value = "lang") int language) {
 		return new ResponseEntity<List<ProductDto>>(productService.getProduct(groupId), HttpStatus.OK);
 	}
 
-
+	@GetMapping("/metrics")
+	public ResponseEntity<List<MetricDto>> getMetrics() {
+		return new ResponseEntity<List<MetricDto>>(metricService.getMetrics(), HttpStatus.OK);
+	}
 }

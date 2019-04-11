@@ -10,6 +10,15 @@ public class MetricDto {
 
 	private static int viewCount;
 
+	public MetricDto() {
+		
+	}
+	public MetricDto(long id, String description, long groupId) {
+		this.id = id;
+		this.description = description;
+		this.groupId = groupId;
+	}
+
 	public long getId() {
 		return id;
 	}
