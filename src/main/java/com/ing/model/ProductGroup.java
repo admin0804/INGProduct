@@ -21,9 +21,9 @@ public class ProductGroup {
 	
 	@Column(name="product_name_du")
 	private String productNameDu;
+	
 	public ProductGroup() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public ProductGroup(long productId, String productNameEn,
 			String productNameDu) {
@@ -32,11 +32,13 @@ public class ProductGroup {
 		this.productNameEn = productNameEn;
 		this.productNameDu = productNameDu;
 	}
+	
 	@Override
 	public String toString() {
 		return "ProductGroup [productId=" + productGroupId + ", productNameEn="
 				+ productNameEn + ", productNameDu=" + productNameDu + "]";
 	}
+	
 	public long getProductId() {
 		return productGroupId;
 	}
