@@ -80,8 +80,9 @@ public class ProductServiceImpl implements ProductService{
 		productList = modelMapper.map(product, listType);
 		
 		Metric metric = metricRepository.findByGroupId(groupId);
-		
-		metric.setVisitCount(metric.getVisitCount()+1);
+		if(metric != null) {
+			metric.setVisitCount(metric.getVisitCount()+1);
+		}
 		
 		metricRepository.save(metric);
 		
