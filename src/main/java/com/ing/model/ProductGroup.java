@@ -12,9 +12,9 @@ import javax.persistence.Table;
 public class ProductGroup {
 	
 	@Id
-	@Column(name="product_id")
+	@Column(name="product_group_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long productId;
+	private long productGroupId;
 	
 	@Column(name="product_name_en")
 	private String productNameEn;
@@ -28,20 +28,20 @@ public class ProductGroup {
 	public ProductGroup(long productId, String productNameEn,
 			String productNameDu) {
 		super();
-		this.productId = productId;
+		this.productGroupId = productId;
 		this.productNameEn = productNameEn;
 		this.productNameDu = productNameDu;
 	}
 	@Override
 	public String toString() {
-		return "ProductGroup [productId=" + productId + ", productNameEn="
+		return "ProductGroup [productId=" + productGroupId + ", productNameEn="
 				+ productNameEn + ", productNameDu=" + productNameDu + "]";
 	}
 	public long getProductId() {
-		return productId;
+		return productGroupId;
 	}
 	public void setProductId(long productId) {
-		this.productId = productId;
+		this.productGroupId = productId;
 	}
 	public String getProductNameEn() {
 		return productNameEn;
