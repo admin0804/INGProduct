@@ -34,5 +34,16 @@ public class ProductController {
 	}
 	
 	
+	@GetMapping("/overview")
+	public ResponseEntity<List<ProductGroup>> getProductGroup(){
+		List<ProductGroup> productGroups = productService.getAllProducts();
+		if(null != productGroups) {
+			return ResponseEntity.ok().body(productGroups);
+			
+		}else {
+			return ResponseEntity.badRequest().build();
+		}
+	}
+	
 
 }
