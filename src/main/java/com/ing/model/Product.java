@@ -31,6 +31,20 @@ public class Product implements Serializable{
 	
 	@Column(name="product_name_du")
 	private String productNameDu;
+	
+	private String percentage;
+
+	private String interestRate;
+
+	private String special;
+
+	private String depositAndWithdrawal;
+
+	private String minInvestment;
+
+	private String maxInvestment;
+
+	private String duration;
 
 	public long getProductId() {
 		return productId;
