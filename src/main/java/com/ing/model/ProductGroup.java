@@ -24,11 +24,10 @@ public class ProductGroup {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long productGroupId;
 	
-	@Column(name="product_group_name_en")
-	private String productGroupNameEn;
+	@Column(name="product_group_name")
+	private String productGroupName;
 	
-	@Column(name="product_group_name_du")
-	private String productGroupNameDu;
+	
 	
 	@OneToMany(cascade=CascadeType.ALL,orphanRemoval=true)
 	@JoinColumn(name="product_group_id")
@@ -46,20 +45,17 @@ public class ProductGroup {
 		this.productGroupId = productGroupId;
 	}
 
-	public String getProductGroupNameEn() {
-		return productGroupNameEn;
+	
+
+
+
+
+	public String getProductGroupName() {
+		return productGroupName;
 	}
 
-	public void setProductGroupNameEn(String productGroupNameEn) {
-		this.productGroupNameEn = productGroupNameEn;
-	}
-
-	public String getProductGroupNameDu() {
-		return productGroupNameDu;
-	}
-
-	public void setProductGroupNameDu(String productGroupNameDu) {
-		this.productGroupNameDu = productGroupNameDu;
+	public void setProductGroupName(String productGroupName) {
+		this.productGroupName = productGroupName;
 	}
 
 	public List<Product> getProduct() {
