@@ -41,13 +41,12 @@ public class ProductController {
 	}
 	
 	@GetMapping("/productGroups")
-	public ResponseEntity<List<ProductGroupDto>> getProductGroups(@RequestParam(value = "lang") int language) {
+	public ResponseEntity<List<ProductGroupDto>> getProductGroups() {
 		return new ResponseEntity<List<ProductGroupDto>>(productService.getProductGroup(), HttpStatus.OK);
 	}
 
 	@GetMapping("/products")
-	public ResponseEntity<List<ProductDto>> getProducts(@RequestParam(value = "id") int groupId,
-			@RequestParam(value = "lang") int language) {
+	public ResponseEntity<List<ProductDto>> getProducts(@RequestParam(value = "id") int groupId) {
 		return new ResponseEntity<List<ProductDto>>(productService.getProduct(groupId), HttpStatus.OK);
 	}
 
